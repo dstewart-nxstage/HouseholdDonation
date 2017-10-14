@@ -1,0 +1,7 @@
+trigger Pickup on Pickup__c (after insert, after update) {
+
+    // When a pickup is created or updated (when we get to that),
+    // and no truck is assigned, assign a truck based on distance
+    TruckLocator.assignTrucks(trigger.new);
+    
+}
